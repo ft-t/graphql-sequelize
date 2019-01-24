@@ -108,7 +108,7 @@ function resolverFactory(targetMaybeThunk, options = {}) {
         }
       }
 
-      return model[list ? 'findAll' : 'findOne'](findOptions);
+      return model[list ? 'findAndCountAll' : 'findAndCountAll'](findOptions);
     }).then(function (result) {
       return options.after(result, args, context, info);
     });
